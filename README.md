@@ -1,0 +1,2 @@
+# validation
+validation指针对表单input的一个校验插件，可以dom结构中配置校验参数

@@ -2,9 +2,59 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>validation-demo</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/require.js/2.1.16/require.min.js"></script>
   </head>
   <body>
+    <div id="main">
+      <div class="row clearfix">
+        <label>姓名</label>
+        <div class="input-box">
+          <input type="text" data-valid="{type:'validCn'}">
+        </div>
+      </div>
 
+      <div class="row clearfix">
+        <label>英文名</label>
+        <div class="input-box">
+          <input type="text" data-valid="{type:'validEn'}">
+        </div>
+      </div>
+
+      <div class="row clearfix">
+        <label>年龄</label>
+        <div class="input-box">
+          <input type="text" data-valid="{type:'validNum'}">
+        </div>
+      </div>
+
+      <div class="row clearfix">
+        <label>兴趣爱好</label>
+        <div class="input-box">
+          <input type="text" data-valid="{type:'validNull'}">
+        </div>
+      </div>
+      <button type="button" class="button">提交</button>
+    </div>
   </body>
+  <script type="text/javascript">
+    require.config({
+      //baseUrl: "/another/path",
+      paths: {
+          "validation": "js/validation"
+      }
+      //waitSeconds: 15
+    });
+    
+    require(['validation'],function(valid){
+      //初始化
+      valid.init();
+      //提交表单时校验
+      $('.button').on('click',function(){
+        if(valid.hasError()) return;
+      });
+    });
+  </script>
 </html>

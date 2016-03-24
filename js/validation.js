@@ -1,8 +1,8 @@
-/***********************************************************************
- * author: 798757301@qq.com
+/*******************************************************************************
+ * author: jinweigang | 798757301@qq.com
  * date: 2016-03-22
  * description 该控件主要提供input校验
- * *********************************************************************
+ * *****************************************************************************
  * eg: input标签添加 data-valid={type:'validNull', text:'xxx不能为空'} | 校验是否为空
  * eg: input标签添加 data-valid={type:'validLen', min:2, max:10} | 校验长度
  */
@@ -121,7 +121,7 @@ define(['jquery'],function($) {
     validCn: function(errorText) {
       var self = $(this);
       self.on('blur',function() {
-        action.common(self, REG.en, errorText, '请输入中文');
+        action.common(self, REG.cn, errorText, '请输入中文');
       });
     },
 

@@ -7,7 +7,7 @@
  * eg: input标签添加 data-valid={type:'validLen', min:2, max:10} | 校验长度
  */
 
-define(function() {
+define(['jquery'],function($) {
   'use strict';
 
   //正则集合

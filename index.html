@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <title>validation-demo</title>
     <link rel="stylesheet" href="./css/index.css">
-    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/require.js/2.1.16/require.min.js"></script>
+    <script src="libs/require.min.js"></script>
   </head>
   <body>
     <div id="main">
@@ -39,22 +38,5 @@
       <button type="button" class="button">提交</button>
     </div>
   </body>
-  <script type="text/javascript">
-    require.config({
-      //baseUrl: "/another/path",
-      paths: {
-          "validation": "js/validation"
-      }
-      //waitSeconds: 15
-    });
-    
-    require(['validation'],function(valid){
-      //初始化
-      valid.init();
-      //提交表单时校验
-      $('.button').on('click',function(){
-        if(valid.hasError()) return;
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </html>

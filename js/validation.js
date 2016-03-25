@@ -151,7 +151,7 @@ define(['jquery'],function($) {
     },
 
     /**
-     * @function validNull
+     * @function validEmail
      * @description 校验输入的是否位数字
      * @param {errorText} 报错文案
      */

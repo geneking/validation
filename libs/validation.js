@@ -201,10 +201,13 @@ define(['jquery'],function($) {
     /**
      * @function hasError
      * @description 失焦后校验所有input，一般用在form提交时
+     * @param {form} 在哪个表单对象下校验
      */
-    hasError: function() {
-      $('input[data-valid]').blur();
-      return $('.valid-error').length;
+    hasError: function(form) {
+      var input = form ? form.find('input[data-valid]') : $('input[data-valid]');
+      input.blur();
+      var error = form ? form.find('.valid-error') : $('.valid-error');
+      return error.length;
     },
 
     /**

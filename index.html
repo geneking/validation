@@ -30,9 +30,23 @@
       </div>
 
       <div class="row clearfix">
+        <label>QQ</label>
+        <div class="input-box">
+          <input type="text" data-valid="{type:'validQQ'}">
+        </div>
+      </div>
+
+      <div class="row clearfix">
+        <label>邮箱</label>
+        <div class="input-box">
+          <input type="text" data-valid="{type:'validEmail'}">
+        </div>
+      </div>
+
+      <div class="row clearfix">
         <label>兴趣爱好</label>
         <div class="input-box">
-          <input type="text" data-valid="{type:'validNull'}">
+          <input type="text" palaceholder="5-30个字符" data-valid="{type:'validLen',min:5,max:30}">
         </div>
       </div>
       <button type="button" class="button">提交</button>

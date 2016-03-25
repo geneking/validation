@@ -12,9 +12,11 @@ define(['jquery'],function($) {
 
   //正则集合
   var REG = {
-    num:   '^[1-9][0-9]*$',
     en:    '^[A-Za-z]+$',
     cn:    '^[\u4E00-\u9FA5]+$',
+    num:   '^[1-9][0-9]*$',
+    qq:    '^[1-9][0-9]{4,11}$',
+    email: '/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/',
     phone: '^1(3|4|5|7|8)[\d]{9}$'
   };
 
@@ -96,7 +98,7 @@ define(['jquery'],function($) {
       var self = $(this);
       self.on('blur',function() {
         var value = self.val(),
-            reg = ['/^\S{', min, ',', max,'}$/'].join('');
+            reg = ['^\\S{', min, ',', max,'}$'].join('');
         action.common(self, reg, false, '字符长度应为' + min + '~' + max)
       });
     },
@@ -136,6 +138,31 @@ define(['jquery'],function($) {
         action.common(self, REG.num, errorText, '请输入数字');
       });
     },
+
+    /**
+     * @function validNull
+     * @description 校验输入的qq，5-12位
+     * @param {text} 报错文案
+     */
+    validQQ: function(errorText) {
+      var self = $(this);
+      self.on('blur',function() {
+        action.common(self, REG.qq, errorText, '请输入正确的qq号');
+      });
+    },
+
+    /**
+     * @function validNull
+     * @description 校验输入的是否位数字
+     * @param {text} 报错文案
+     */
+    validEmail: function(errorText) {
+      var self = $(this);
+      self.on('blur',function() {
+        action.common(self, REG.email, errorText, '请输入正确的邮箱');
+      });
+    },
+
 
     /**
      * @function validPhone

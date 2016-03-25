@@ -45,7 +45,7 @@ inputList.map(function(index, ele) {
 ```html
 校验为空：<input type="text" data-valid="{type:'validNull'}">
 校验中文：<input type="text" data-valid="{type:'validNull',text:'请输入中文'}">
-校验电话：<input type="text" data-valid="{type:'phone',text:'请输入正确的手机号'}">
+校验电话：<input type="text" data-valid="{type:'validPhone',text:'请输入正确的手机号'}">
 其他类似...
 ```
 ```javascript

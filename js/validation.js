@@ -78,7 +78,7 @@ define(['jquery'],function($) {
     /**
      * @function validNull
      * @description 校验输入为空的情况
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validNull: function(errorText) {
       var self = $(this);
@@ -92,7 +92,6 @@ define(['jquery'],function($) {
      * @description 校验输入特定长度
      * @param {start} 最少输入字符
      * @param {end} 最多输入字符
-     * @param {text} 报错文案
      */
     validLen: function(min, max) {
       var self = $(this);
@@ -106,7 +105,7 @@ define(['jquery'],function($) {
     /**
      * @function validEn
      * @description 校验英文字母输入
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validEn: function(errorText) {
       var self = $(this);
@@ -118,7 +117,7 @@ define(['jquery'],function($) {
     /**
      * @function validCn
      * @description 校验英文字母输入
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validCn: function(errorText) {
       var self = $(this);
@@ -128,9 +127,9 @@ define(['jquery'],function($) {
     },
 
     /**
-     * @function validNull
+     * @function validNum
      * @description 校验输入的是否位数字
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validNum: function(errorText) {
       var self = $(this);
@@ -140,9 +139,9 @@ define(['jquery'],function($) {
     },
 
     /**
-     * @function validNull
+     * @function validQQ
      * @description 校验输入的qq，5-12位
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validQQ: function(errorText) {
       var self = $(this);
@@ -154,7 +153,7 @@ define(['jquery'],function($) {
     /**
      * @function validNull
      * @description 校验输入的是否位数字
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validEmail: function(errorText) {
       var self = $(this);
@@ -167,7 +166,7 @@ define(['jquery'],function($) {
     /**
      * @function validPhone
      * @description 校验输入的是否位数字
-     * @param {text} 报错文案
+     * @param {errorText} 报错文案
      */
     validPhone: function(errorText) {
       var self = $(this);

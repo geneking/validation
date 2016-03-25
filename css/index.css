@@ -54,8 +54,6 @@ body{background-color: #ebeef2;}
   outline: none;
   cursor: pointer;
 }
-  margin-right: 50px;
-}
 
 /** validation 样式 **/
 .valid-error .error-border{

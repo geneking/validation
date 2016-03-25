@@ -57,6 +57,8 @@ require(['validation'],function(valid){
 		reg:'^[1-9][0-9]{5,11}$',
 		type:'validQQ'
 	});
+	//表单提交时验证，dom为表单jquery对象，dom可选，不传则默认所有表单
+	if(valid.hasError(dom)) return;
 });
 ```
 

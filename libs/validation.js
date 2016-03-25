@@ -12,12 +12,12 @@ define(['jquery'],function($) {
 
   //正则集合
   var REG = {
-    en:    '^[A-Za-z]+$',
-    cn:    '^[\u4E00-\u9FA5]+$',
-    num:   '^[1-9][0-9]*$',
-    qq:    '^[1-9][0-9]{4,11}$',
-    email: '/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/',
-    phone: '^1(3|4|5|7|8)[\d]{9}$'
+    en:    /^[A-Za-z]+$/,
+    cn:    /^[\u4E00-\u9FA5]+$/,
+    num:   /^[1-9][0-9]*$/,
+    qq:    /^[1-9][0-9]{4,11}$/,
+    email: /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/,
+    phone: /^1(3|4|5|7|8)[\d]{9}$/
   };
 
   //操作函数
@@ -61,10 +61,9 @@ define(['jquery'],function($) {
      * @param {defaultText} 默认文案
      */
     common: function(self, reg, errorText, defaultText){
-      var value = $.trim(self.val()),
-          pattern = new RegExp(reg);
+      var value = $.trim(self.val());
       if (action.isNull(self)) return;
-      if (!pattern.test(value)) {
+      if (!reg.test(value)) {
         self.addClass('error-border');
         action.addError(self, errorText || defaultText);
       } else {
@@ -97,8 +96,9 @@ define(['jquery'],function($) {
       var self = $(this);
       self.on('blur',function() {
         var value = self.val(),
-            reg = ['^\\S{', min, ',', max,'}$'].join('');
-        action.common(self, reg, false, '字符长度应为' + min + '~' + max)
+            reg = ['^\\S{', min, ',', max,'}$'].join(''),
+            pattern = new RegExp(reg);
+        action.common(self, pattern, false, '字符长度应为' + min + '~' + max)
       });
     },
 

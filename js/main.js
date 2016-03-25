@@ -1,7 +1,7 @@
 require.config({
   //baseUrl: "/another/path",
   paths: {
-      "validation": "js/validation",
+      "validation": "libs/validation",
       "jquery": "libs/jquery.min"
   }
   //waitSeconds: 15
@@ -10,7 +10,7 @@ require.config({
 require(['jquery','validation'],function($, valid){
   //初始化
   valid.init();
-  
+
   $('.button').on('click',function(){
     //提交表单时校验
     if(valid.hasError()) return;

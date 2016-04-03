@@ -7,9 +7,15 @@
  * eg: input标签添加 data-valid={type:'validLen', min:2, max:10} | 校验长度
  */
 
-define(['jquery'],function($) {
-  'use strict';
-
+ (function(factory){
+    if (typeof define === "function" && define.amd) {
+        define(["jquery"], factory);
+    } else if (typeof exports === 'object') {
+        factory(require('jquery'));
+    } else {
+        factory(jQuery);
+    }
+}(function($, undefined){
   //正则集合
   var REG = {
     en:    /^[A-Za-z]+$/,
@@ -176,8 +182,8 @@ define(['jquery'],function($) {
     }
   });
 
-  //暴露外部调用方法
-  var valid = {
+  //外部调用方法
+  $.valid = {
     /**
      * @function register
      * @description 外部扩展，自定义注册校验规则
@@ -239,5 +245,5 @@ define(['jquery'],function($) {
     }
   };
 
-  return valid;
-});
+  return $.valid;
+}));

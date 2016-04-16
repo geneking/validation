@@ -1,0 +1,19 @@
+{
+  "name": "validation",
+  "version": "1.0.0",
+  "description": "### 1.怎么实现的 [1].代码结构： ```javascript //一些公共调用方法 var action = {}; //jquery原型上添加相应校验方法 $.fn.extend({ \tvalidNull: function(){}, \tvalidCn: function(){}, \tvalidPhone: function(){} \t//等等... }); //外部调用方法 var valid = { \tinit: function(){},//全局初始化 \tregister: function(){},//自定义注册事件 \thasError: function(){}//表单提交时调用，全局验证 }; ``` <!--more--> [2].解析data-valid的实现：",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geneking/validation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geneking/validation/issues"
+  },
+  "homepage": "https://github.com/geneking/validation#readme"
+}
